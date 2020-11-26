@@ -30,7 +30,7 @@ void input_matriks(int m[][4]) {
 void cetak_matriks(int m[][4]) {
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            cout << m[i][j] << "\t";
+            cout << m[i][j]<< "\t";
         }
         cout << endl;
     }

@@ -1,1 +1,1 @@
-# Problem Solving C, C++
+# Programming Algorithm

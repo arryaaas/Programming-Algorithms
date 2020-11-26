@@ -5,3 +5,7 @@ Algortima Pemrograman atau **Alpro** adalah solusi dari suatu masalah yang harus
 ## Lisensi 
 
 Didistribusikan di bawah Lisensi MIT. Lihat `LICENSE` untuk informasi lebih lanjut.
+
+## Kontak
+
+Mochammad Arya Salsabila - Aryasalsabila789@gmail.com

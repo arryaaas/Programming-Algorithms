@@ -1,6 +1,6 @@
 # Programming Algorithms
 
-Algortima Pemrograman atau **Alpro** adalah solusi dari suatu masalah yang harus dipecahkan dengan menggunakan komputer. Algoritma bukan hafalan, atau pola yang harus dihafal, tapi algoritma adalah solusi berbasis pengalaman, maka dari itu **Practice Make Perfect**. Repository ini berisi kumpulan studi kasus yang diselesaikan menggunakan bahasa C++.
+**Algortima Pemrograman** atau **Alpro** adalah solusi dari suatu masalah yang harus dipecahkan dengan menggunakan komputer. Algoritma bukan hafalan, atau pola yang harus dihafal, tapi algoritma adalah solusi berbasis pengalaman, maka dari itu **Practice Make Perfect**. Repository ini berisi kumpulan studi kasus yang diselesaikan menggunakan bahasa C++.
 
 ## Lisensi 
 

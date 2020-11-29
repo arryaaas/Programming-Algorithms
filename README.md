@@ -10,4 +10,3 @@ Didistribusikan di bawah Lisensi MIT. Lihat `LICENSE` untuk informasi lebih lanj
 ## Kontak
 
 Mochammad Arya Salsabila - Aryasalsabila789@gmail.com
-Mochammad Arya Salsabila - Aryasalsabila789@gmail.com

@@ -1,6 +1,7 @@
 // Nama : Mochammad Arya Salsabila
 // Npm   : 19081010001
 // Kelas : Pemrograman Lanjut (D)
+// Studi Kasus : Sistem Informasi Pendataan Pegawai Perusahaan
 
 #include <iostream>
 #include <fstream>

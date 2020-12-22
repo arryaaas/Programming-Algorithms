@@ -18,17 +18,16 @@ typedef struct {
     char status[20];
 } data_pegawai;
 
-// Prototype procedure simpan_ke_file(), baca_dari_file(), input_data(), show_data()
-void simpan_ke_file();
-void baca_dari_file();
+// Prototype procedure input_data(), show_data(), 
+// simpan_ke_file(), baca_dari_file()
 void input_data(data_pegawai &pegawai);
 void show_data(data_pegawai pegawai);
+void simpan_ke_file();
+void baca_dari_file();
 
-// Fungsi main / fungsi utama program
+// Fungsi main atau fungsi utama program
 int main() {
     bool exit = false;
-
-    data_pegawai pegawai;
 
     while (!exit) {
         int choice;
@@ -39,7 +38,8 @@ int main() {
         cout << "| 1. Tambah Pegawai                             |" << endl;
         cout << "| 2. Lihat Pegawai                              |" << endl;
         cout << "| 3. Keluar                                     |" << endl;
-        cout << "=================================================" << endl << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
 
         cout << "Masukkan pilihan : "; 
         cin >> choice;
@@ -72,34 +72,8 @@ int main() {
     return 0;
 }
 
-// Definisi procedure simpan_ke_file(), baca_dari_file(), input_data(), show_data()
-void simpan_ke_file() {
-    data_pegawai pegawai;
-    input_data(pegawai);
-
-    ofstream file;
-    file.open("data.txt", ios::binary | ios::app);
-    file.write((char*) &pegawai, sizeof(pegawai));
-    file.close();
-}
-
-void baca_dari_file() {
-    data_pegawai pegawai;
-
-    ifstream file;
-    file.open("data.txt", ios::binary);
-
-    if (!file) {
-        cout << "Belum ada data, silahkan tambahkan data terlebih dahulu..." << endl << endl;
-    } else {
-        while (file.read((char *) &pegawai, sizeof(pegawai))) {
-            show_data(pegawai);
-        }
-    }
-
-    file.close();
-}
-
+// Definisi procedure input_data(), show_data(), 
+// simpan_ke_file(), baca_dari_file()
 void input_data(data_pegawai &pegawai) {
     cout << "Nip pegawai    : ";
     fflush(stdin); cin.get(pegawai.nip_pegawai, 30);
@@ -128,4 +102,32 @@ void show_data(data_pegawai pegawai) {
     cout << "Jabatan        : " << pegawai.jabatan << endl;
     cout << "Status pegawai : " << pegawai.status << endl << endl;
     cout << "Data berhasil dibaca..." << endl << endl;
+}
+
+void simpan_ke_file() {
+    data_pegawai pegawai;
+    input_data(pegawai);
+
+    ofstream file;
+    file.open("data.txt", ios::binary | ios::app);
+    file.write((char*) &pegawai, sizeof(pegawai));
+    file.close();
+}
+
+void baca_dari_file() {
+    data_pegawai pegawai;
+
+    ifstream file;
+    file.open("data.txt", ios::binary);
+
+    if (!file) {
+        cout << "Belum ada data, silahkan tambahkan data terlebih dahulu...";
+        cout << endl << endl;
+    } else {
+        while (file.read((char *) &pegawai, sizeof(pegawai))) {
+            show_data(pegawai);
+        }
+    }
+
+    file.close();
 }

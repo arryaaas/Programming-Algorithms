@@ -1,3 +1,7 @@
+// Nama : Mochammad Arya Salsabila
+// Npm   : 19081010001
+// Kelas : Pemrograman Lanjut (D)
+
 #include <iostream>
 #include <fstream>
 
@@ -14,8 +18,7 @@ typedef struct {
     char status[20];
 } data_pegawai;
 
-// Prototype procedure
-// simpan_ke_file(), baca_dari_file(), input_data(), show_data()
+// Prototype procedure simpan_ke_file(), baca_dari_file(), input_data(), show_data()
 void simpan_ke_file();
 void baca_dari_file();
 void input_data(data_pegawai &pegawai);
@@ -45,13 +48,11 @@ int main() {
         switch (choice) {
         case 1:
             simpan_ke_file();
-            cout << "Data berhasil ditambahkan..." << endl << endl;
             system("pause");
             system("cls");
             break;
         case 2:
             baca_dari_file();
-            cout << "Data berhasil dibaca..." << endl << endl;
             system("pause");
             system("cls");
             break;
@@ -63,18 +64,19 @@ int main() {
             break;
         default:
             cout << "Pilihan salah" << endl;
+            system("pause");
+            system("cls");
         }
     }
 
     return 0;
 }
 
-// Definisi procedure 
-// simpan_ke_file(), baca_dari_file(), input_data(), show_data()
+// Definisi procedure simpan_ke_file(), baca_dari_file(), input_data(), show_data()
 void simpan_ke_file() {
     data_pegawai pegawai;
     input_data(pegawai);
-    
+
     ofstream file;
     file.open("data.txt", ios::binary | ios::app);
     file.write((char*) &pegawai, sizeof(pegawai));
@@ -87,9 +89,15 @@ void baca_dari_file() {
     ifstream file;
     file.open("data.txt", ios::binary);
 
-    while (file.read((char *) &pegawai, sizeof(pegawai))) {
-        show_data(pegawai);
+    if (!file) {
+        cout << "Belum ada data, silahkan tambahkan data terlebih dahulu..." << endl << endl;
+    } else {
+        while (file.read((char *) &pegawai, sizeof(pegawai))) {
+            show_data(pegawai);
+        }
     }
+
+    file.close();
 }
 
 void input_data(data_pegawai &pegawai) {
@@ -108,6 +116,7 @@ void input_data(data_pegawai &pegawai) {
     cout << "Status pegawai : ";
     fflush(stdin); cin.get(pegawai.status, 20);
     cout << endl;
+    cout << "Data berhasil ditambahkan..." << endl << endl;
 }
 
 void show_data(data_pegawai pegawai) {
@@ -118,4 +127,5 @@ void show_data(data_pegawai pegawai) {
     cout << "Alamat         : " << pegawai.alamat << endl;
     cout << "Jabatan        : " << pegawai.jabatan << endl;
     cout << "Status pegawai : " << pegawai.status << endl << endl;
+    cout << "Data berhasil dibaca..." << endl << endl;
 }

@@ -49,11 +49,13 @@ int main() {
         switch (choice) {
         case 1:
             simpan_ke_file();
+            cout << "Data berhasil ditambahkan..." << endl << endl;
             system("pause");
             system("cls");
             break;
         case 2:
             baca_dari_file();
+            cout << "Data berhasil dibaca..." << endl << endl;
             system("pause");
             system("cls");
             break;
@@ -77,7 +79,7 @@ int main() {
 // simpan_ke_file(), baca_dari_file()
 void input_data(data_pegawai &pegawai) {
     cout << "Nip pegawai    : ";
-    fflush(stdin); cin.get(pegawai.nip_pegawai, 30);
+    fflush(stdin); cin.get(pegawai.nip_pegawai, 20);
     cout << "Nama pegawai   : ";
     fflush(stdin); cin.get(pegawai.nama_pegawai, 30);
     cout << "Tempat lahir   : ";
@@ -85,13 +87,12 @@ void input_data(data_pegawai &pegawai) {
     cout << "Tanggal lahir  : ";
     fflush(stdin); cin.get(pegawai.tgl_lahir, 30);
     cout << "Alamat         : ";
-    fflush(stdin); cin.get(pegawai.alamat, 30);
+    fflush(stdin); cin.get(pegawai.alamat, 50);
     cout << "Jabatan        : ";
     fflush(stdin); cin.get(pegawai.jabatan, 20);
     cout << "Status pegawai : ";
     fflush(stdin); cin.get(pegawai.status, 20);
     cout << endl;
-    cout << "Data berhasil ditambahkan..." << endl << endl;
 }
 
 void show_data(data_pegawai pegawai) {
@@ -102,15 +103,18 @@ void show_data(data_pegawai pegawai) {
     cout << "Alamat         : " << pegawai.alamat << endl;
     cout << "Jabatan        : " << pegawai.jabatan << endl;
     cout << "Status pegawai : " << pegawai.status << endl << endl;
-    cout << "Data berhasil dibaca..." << endl << endl;
 }
 
 void simpan_ke_file() {
     data_pegawai pegawai;
+    
+    // Untuk input data pegawai
     input_data(pegawai);
 
     ofstream file;
     file.open("data.txt", ios::binary | ios::app);
+
+    // Menulis data pegawai ke file "data.txt"
     file.write((char*) &pegawai, sizeof(pegawai));
     file.close();
 }
@@ -125,7 +129,9 @@ void baca_dari_file() {
         cout << "Belum ada data, silahkan tambahkan data terlebih dahulu...";
         cout << endl << endl;
     } else {
+        // Membaca data pegawai dari file "data.txt"
         while (file.read((char *) &pegawai, sizeof(pegawai))) {
+            // Untuk menampilkan data pegawai
             show_data(pegawai);
         }
     }

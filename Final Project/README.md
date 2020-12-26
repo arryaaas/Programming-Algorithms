@@ -11,7 +11,7 @@ ada pada [laporan](https://github.com/arryaaas/Programming-Algorithms/blob/maste
 
 ## :wink: Pengembang Proyek
 
-- :boy: Mochammad Arya Salsabila (19081010001)
+:boy: Mochammad Arya Salsabila (19081010001)
 
 ## :movie_camera: Video Penjelasan 
 

@@ -15,4 +15,4 @@ Mochammad Arya Salsabila (19081010001)
 
 ## :movie_camera: Video Penjelasan 
 
-Video penjelasan tantang demo program final project dapat dilihat [disini](https://youtu.be/mQwKyYcde4U).
+Video penjelasan tentang demo program final project dapat dilihat [disini](https://youtu.be/mQwKyYcde4U).
